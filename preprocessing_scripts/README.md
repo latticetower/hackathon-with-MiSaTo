@@ -27,3 +27,7 @@ Output: inside of the folder there will be folder called `npz` with preprocessed
 
 
 3. Notebook `aa_sequences_from_data.ipynb` is used to produce 1-letter protein sequences for different protein chains from intermediate csv files.
+
+4. The protein sequences file produced by `aa_sequences_from_data.ipynb` is used to extract protein sequence embeddings with ESM2 protein language model. This is done with the notebook `colab_misato_embeddings_extraction_esm2.ipynb`, which was run with Colab Pro (note that I've put the data to my Google Drive for this).
+
+5. I've also precomputed embeddings for protein chains represented as an arrays of `(n_frames, n_residues, <3 backbone atoms>, <3 coordinates>)` (output of script 2), this was done with `colab_misato_embeddings_extraction_esm_if1.ipynb`, and only for the frame 0 (I had the idea to do it for all 100 frames, but it takes a long time).
