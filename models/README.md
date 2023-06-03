@@ -18,4 +18,9 @@ As a result of training, we get these metrics (on test part of the dataset):
 
 - `colab_notebooks/colab_pyg_dgcnn_v2.ipnynb` will contain the code for training in this setting
 
+|              Metric              |             Value on dataset |
+|----------------------------------|------------------------------|
+| Test Pearson Correlation Coefficient |          0.603043794631958           |
+|               test_mse               |          0.5096604228019714          |
+
 3. One of the (1) or (2), but with additional features - distances to top-3 ligand atoms from each atom.
