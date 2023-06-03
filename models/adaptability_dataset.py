@@ -1,6 +1,7 @@
 import h5py
 import os
 import torch
+import numpy as np
 from torch_geometric.data import Dataset
 from torch_geometric.data import Data
 
@@ -13,7 +14,6 @@ class AdaptabilityDataset(Dataset):
         self.pdbid_list = pdbid_list
         self.processed_pdbids = []
         self.pdbid2idx = dict()
-        # list of pdb ids in data split
         self.file_names = []
         self.target_pretransform = target_pretransform
         super().__init__(raw_dir, transform, pre_transform, pre_filter)
@@ -21,15 +21,13 @@ class AdaptabilityDataset(Dataset):
     @property
     def raw_file_names(self):
         return [
-            os.path.join("data", 'esm_if_out_frame0.hdf5'), 
-            os.path.join("data", 'md_adaptabilities.hdf5')
+            os.path.join(self.raw_dir, 'esm_if_out_frame0.hdf5'), 
+            os.path.join(self.raw_dir, 'md_adaptabilities.hdf5')
         ]
 
     @property
     def processed_file_names(self):
         return self.file_names
-        #return [f"{pdbid}.pt" for pdbid in self.split_idx]
-        # return ['data_1.pt', 'data_2.pt', ...]
 
     def process(self):
         idx = 0
@@ -75,5 +73,4 @@ class AdaptabilityDataset(Dataset):
     def get(self, idx):
         pdbid = self.processed_pdbids[idx]
         data = torch.load(os.path.join(self.processed_dir, f'{pdbid}.pt'))
-        # data = torch.load(osp.join(self.processed_dir, f'data_{idx}.pt'))
         return data
