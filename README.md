@@ -11,5 +11,7 @@ https://github.com/sab148/MiSaTo-dataset
 
 - `exploratorial` - notebooks with plots computed from preprocessed data.
 
+- `models` - code for models to be run on precomputed data (mostly colab notebooks are used at the moment)
+
 The link to preprocessed data might also be published, but I plan to focus on creation of scripts which can be rerun to reproduce the results, than on storing the data (might publish them on Kaggle or Huggingface though).
 
