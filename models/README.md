@@ -8,10 +8,10 @@ I'll probably need to precompute a vector of distances to ligands before doing a
 
 As a result of training, we get these metrics (on test part of the dataset):
 
-             Test metric              ┃             DataLoader 0             ┃
-┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
-│ Test Pearson Correlation Coefficient │          0.4146082401275635          │
-│               test_mse               │         0.19715961813926697
+|              Metric              |             Value on dataset             |
+|--------------------------------------|--------------------------------------|
+|  Pearson Correlation Coefficient |          0.4146082401275635          |
+|               MSE               |         0.19715961813926697          |
 
 
 2. Predict adaptability mean and std values for each backbone atom  from the embeddings produced by ESM-IF at previous step.
