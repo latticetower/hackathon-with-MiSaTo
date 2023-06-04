@@ -20,7 +20,16 @@ As a result of training, we get these metrics (on test part of the dataset):
 
 |              Metric              |             Value on dataset |
 |----------------------------------|------------------------------|
-| Test Pearson Correlation Coefficient |          0.603043794631958           |
-|               test_mse               |          0.5096604228019714          |
+| Pearson Correlation Coefficient  |          0.603043794631958           |
+|               MSE               |          0.5096604228019714          |
+
+2b. Predict standard deviation values
+
+- `colab_notebooks/colab_pyg_dgcnn_v2.ipnynb`
+
+| Metric              |             Value             |
+|---------------------|-------------------------------|
+| Pearson Correlation Coefficient |          0.4852980971336365          |
+|              MSE               |         0.14518728852272034 |
 
 3. One of the (1) or (2), but with additional features - distances to top-3 ligand atoms from each atom.
